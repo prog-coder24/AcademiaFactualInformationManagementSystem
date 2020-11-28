@@ -6,7 +6,6 @@ from django.utils import timezone
 
 from .managers import CustomUserManager
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
 
 
 class User(AbstractBaseUser, PermissionsMixin):
