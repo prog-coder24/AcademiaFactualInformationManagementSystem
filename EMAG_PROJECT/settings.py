@@ -26,7 +26,7 @@ SECRET_KEY = 'i5va1*m46xf#hc44n1htb1j98-x@va_+trej+3_+yvy!rh4ps@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = 'EMAG_APP.User'
 
@@ -130,3 +130,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+# EMAIL BACKEND
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'vaishnavisawant7869@gmail.com'
+EMAIL_HOST_PASSWORD = 'iaymiamor.12'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

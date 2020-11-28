@@ -36,5 +36,4 @@ urlpatterns = [
     path('add/subscriber', add_subscriber),
     path('success/', authenticate_view),
     path('welcome/', home_view),
-
 ]

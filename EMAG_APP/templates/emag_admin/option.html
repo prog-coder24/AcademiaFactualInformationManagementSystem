@@ -1,43 +1,30 @@
-{% extends 'lognav.html' %}{% load static %}
-{% block body %}
+{% extends 'lognav.html' %}{% load static %} {% block body %}
 
-    <div class="op-grid text-center my-5 mx-5">
-    <div class="card text-center m-auto">
-        <img class="card-img-top img-fluid" src="/static/img/eventicon.jpg" alt="" >
+<div class="op-grid text-center my-5 mx-lg-5 mx-sm-4 mx-4">
+    <div class="card text-center">
+        <img class="card-img-top img-fluid" src="/static/img/eventicon.jpg" alt="">
         <div class="card-body">
             <h3 class="card-title font-weight-bold"><a href="/options/etab/">Events</a>
             </h3>
         </div>
     </div>
-     
-        <div class="card text-center m-auto">
-        <img class="card-img-top img-fluid" src="/static/img/projecticon.jpeg" alt="" >
+
+    <div class="card text-center">
+        <img class="card-img-top img-fluid" src="/static/img/projecticon.jpeg" alt="">
         <div class="card-body">
             <h3 class="card-title font-weight-bold"><a href="/options/ptab/">Projects</a>
             </h3>
         </div>
-        </div>
-      
-     <div class="card text-center m-auto">
-        <img class="card-img-top img-fluid" src="/static/img/achicon.jpeg" alt="" >
+    </div>
+
+    <div class="card text-center">
+        <img class="card-img-top img-fluid" src="/static/img/achicon.jpeg" alt="">
         <div class="card-body">
-            <h3 class="card-title font-weight-bold"><a href="#">Achievements</a>
+            <h3 class="card-title font-weight-bold"><a href="/options/atab/">Achievements</a>
             </h3>
         </div>
-        </div>
-     </div> 
-    
+    </div>
+</div>
+
 
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-

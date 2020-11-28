@@ -1,51 +1,43 @@
-{% extends 'lognav.html' %}
-{% load static %}
-{% block body %}
-{% include 'DeleteEveModal.html' %}
+{% extends 'lognav.html' %} {% load static %} {% block body %} {% include 'DeleteEveModal.html' %}
 <div class="container-fluid my-5">
-  
-  <div class="my-3">
-    <button class="btn"><a href="/add-event/" ><i class="fas fa-plus-square"></i> ADD EVENT</a></button>
-  </div>
-    <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Title</th>
-            <th scope="col">Date</th>
-            <th scope="col">Organiser</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-        
-        {% for et in etab %} 
-          <tr>
-            <th scope="row">{{ forloop.counter }}</th>
-            <td><a href="/events/{{ et.id }}">{{ et.event_title }}</a></td>
-            <td>{{ et.event_date }}</td>
-            <td>{{ et.organised_by }}</td>
-            <td>
-              <div class="row">
-                <a
-                  class="confirm-delete px-3"
-                  title="Delete"
-                  data-toggle="modal"
-                  data-target="#confirmDeleteModal"
-                  id="{{et.id}}"
-                >
-                  <i class="fas fa-trash"></i>
-                </a>
-                <a href="/update/{{et.id}}"><i class="fas fa-edit"></i></a>
-              </div>            
-            </td>
-          </tr>
-          {% endfor %}
-         
-        </tbody>
-        
-      </table>
-     
+
+    <div class="my-3">
+        <button class="btn"><a href="/add-event/" ><i class="fas fa-plus-square"></i> ADD EVENT</a></button>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Organiser</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for et in etab %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td><a href="/events/{{ et.id }}">{{ et.event_title }}</a></td>
+                    <td>{{ et.event_date }}</td>
+                    <td>{{ et.organised_by }}</td>
+                    <td>
+                        <div class="row">
+                            <a class="confirm-delete px-3" title="Delete" data-toggle="modal" data-target="#confirmDeleteModal" id="{{et.id}}">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                            <a href="/update/{{et.id}}"><i class="fas fa-edit"></i></a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+    </div>
 </div>
 
 

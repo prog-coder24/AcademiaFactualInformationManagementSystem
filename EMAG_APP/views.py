@@ -1,4 +1,3 @@
-
 from django.http import HttpResponse
 from django.shortcuts import render
 import datetime
@@ -8,6 +7,9 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
+from django.conf import settings
+from django.template.loader import render_to_string
 
 
 def home_view(request):
@@ -61,6 +63,17 @@ def add_event_view(request):
 
         Event.objects.create(user_id=request.user, event_title=title, event_description=description, event_category=menu, event_tags=tags,
                              event_banner=banner, event_data=data, organised_by=organised_by, sponsored_by=sponsored_by, event_date=event_date, uploaded_at=uploaded_at)
+
+        event = Event.objects.get(event_title=title)
+
+        content = render_to_string("email.html", {'et': event})
+
+        subs = Subscriber.objects.values_list('email_address', flat=True)
+
+        email = EmailMultiAlternatives('Emagazine Update', content, settings.EMAIL_HOST_USER, list(subs))
+        email.attach_alternative(content, "text/html")
+        email.fail_silenty = False
+        email.send()  
 
         return redirect(etab_view)
 
