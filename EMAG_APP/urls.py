@@ -6,6 +6,7 @@ from .views import *
 urlpatterns = [
     path('', home_view),
     path('menu/events/', event_view),
+    path('about/', about_view),
     path('events/<int:pk>', displayevent_view),
     path('add-event/', event_form_view),
     path('update/<int:pk>', updateEvent_view),

@@ -156,7 +156,8 @@ a:hover {
     color: #fff;
 }
 
-.browse-info-wrapper hr {
+.browse-info-wrapper hr,
+.about-us-wrapper hr {
     background-color: #ff9c33;
     width: 110px;
     margin: 2px auto;
@@ -363,7 +364,8 @@ a:hover {
     .footer {
         padding: 20px;
     }
-    .browse-info-wrapper hr {
+    .browse-info-wrapper hr,
+    .about-us-wrapper hr {
         width: 60px;
     }
     .card {
@@ -394,5 +396,8 @@ a:hover {
     }
     .collapsed {
         visibility: visible;
+    }
+    .content-wrapper h5 {
+        font-size: 15px;
     }
 }
