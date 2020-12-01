@@ -35,5 +35,6 @@ urlpatterns = [
     path('achievement/update/<int:pk>', updateAch),
     path('add/subscriber', add_subscriber),
     path('success/', authenticate_view),
+    path('about/', about),
     path('welcome/', home_view),
 ]

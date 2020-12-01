@@ -11,7 +11,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Title</th>
                     <th scope="col">Field</th>
-                    <th scope="col">Date</th>
+                    <th scope="col">Uploaded_at</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -21,7 +21,7 @@
                     <th scope="row">{{ forloop.counter }}</th>
                     <td><a href="/achievements/{{ at.id }}">{{ at.achievement_title }}</a></td>
                     <td>{{ at.achievement_field }}</td>
-                    <td>{{ at.uploaded_at | date:'Y-m-d' }}</td>
+                    <td>{{ at.uploaded_at | date:'d-m-yy' }}</td>
                     <td>
                         <div class="row">
                             <a class="confirm-delete px-3" title="Delete" data-toggle="modal" data-target="#confirmDeleteModal" id="{{at.id}}">

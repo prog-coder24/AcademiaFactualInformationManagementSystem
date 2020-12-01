@@ -19,6 +19,9 @@ def home_view(request):
 def menu_view(request):
     return render(request, "menu/menu.html")
 
+def about(request):
+    return render(request, "about.html")
+
 
 def event_view(request):
 

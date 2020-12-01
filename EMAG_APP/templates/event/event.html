@@ -4,11 +4,11 @@
 <div class="event-info-wrapper img-fluid">
     <div class="container">
         <div class="row" style="overflow-x: hidden">
-            <div class="col-lg-12 info-text">
+          <div class="col-lg-12 info-text">
                 <h1 class="font-weight-bold" data-aos="zoom-in" data-aos-duration="1000">
                     Events
                 </h1>
-            </div>
+            </div>  
              
         </div>
      </div>
@@ -23,7 +23,7 @@
                     <h3 class="card-title font-weight-bold"><a href="/events/{{ event.id }}">{{ event.event_title }}</a>
                     </h3>
                     <p class="font-weight-bold text-muted">{{ event.uploaded_at }}</p>
-                    <p class="event-category shadow">{{ event.event_category }}</p>
+                    <p class="event-category">{{ event.event_category }}</p>
                 </div>
                 </div>
                 {% endfor %}

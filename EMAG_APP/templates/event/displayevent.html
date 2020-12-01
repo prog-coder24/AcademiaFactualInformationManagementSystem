@@ -22,13 +22,7 @@
             </p>
         </div>
         <div class="content">{{ event.event_description | safe }}</div>
-        <div class="event-data text-center">
-            {% if event.event_data %}
-            <p>
-                <a class="btn button" href="{{ event.event_data.url }}" download>Download Reference</a>
-            </p>
-            {% endif %}
-        </div>
+       
         <div class="organised-by mb-5 shadow-sm" data-aos="zoom-in" data-aos-duration="1000">
             <h3 class="font-weight-bold mt-lg-2">
                 Organised by {{ event.organised_by }}
@@ -39,6 +33,13 @@
             <h3 class="font-weight-bold mt-lg-2">
                 Sponsored by {{ event.sponsored_by }}
             </h3>
+        </div>
+        <div class="event-data text-center">
+            {% if event.event_data %}
+            <p>
+                <a class="btn button" href="{{ event.event_data.url }}" download>Download Reference</a>
+            </p>
+            {% endif %}
         </div>
 
     </div>
