@@ -52,7 +52,6 @@ body {
   width: 100%;
 }
 
-
 .button {
   background-color: #ff9c33;
   color: #070707;
@@ -196,8 +195,6 @@ a:hover {
 .content {
   font-size: 20px;
 }
-
-
 
 .event-info-wrapper {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -382,8 +379,7 @@ a:hover {
   .footer {
     padding: 20px;
   }
-  .browse-info-wrapper hr,
-  .about-us-wrapper hr {
+  .browse-info-wrapper hr {
     width: 60px;
   }
   .card {

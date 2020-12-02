@@ -12,11 +12,11 @@ from django.conf import settings
 from django.template.loader import render_to_string
 
 
-def home_view(request):
+def home(request):
     return render(request, "home.html")
 
 
-def menu_view(request):
+def menu(request):
     return render(request, "menu/menu.html")
 
 def about(request):
@@ -40,6 +40,55 @@ def displayevent_view(request, pk):
 
     return None
 
+
+
+
+
+def project_view(request):
+
+    projects = Project.objects.all()
+    return render(request, "project/project.html", {"projects": projects})
+
+
+def displayproj_view(request, pk):
+
+    try:
+        project = Project.objects.get(pk=pk)
+        return render(request, "project/displayproj.html", {"project": project})
+
+    except Project.DoesNotExist:
+        return render(request, "home.html")
+
+    return None
+
+
+
+
+def achievement_view(request):
+
+    achievements = Achievement.objects.all()
+    return render(request, "achievement/achievement.html", {"achievements": achievements})
+
+
+def displayach_view(request, pk):
+
+    try:
+        achievement = Achievement.objects.get(pk=pk)
+        return render(request, "achievement/displayach.html", {"achievement": achievement})
+
+    except Achievement.DoesNotExist:
+        return render(request, "home.html")
+
+    return None
+
+def login_view(request):
+    return render(request, "emag_admin/login.html")
+
+
+def logout_view(request):
+
+    logout(request)
+    return redirect(login_view)
 
 @login_required(login_url='/login/')
 def event_form_view(request):
@@ -117,25 +166,6 @@ def deleteEvent_view(request, pk):
     etab = Event.objects.all()
     return redirect(etab_view)
 
-
-def project_view(request):
-
-    projects = Project.objects.all()
-    return render(request, "project/project.html", {"projects": projects})
-
-
-def displayproj_view(request, pk):
-
-    try:
-        project = Project.objects.get(pk=pk)
-        return render(request, "project/displayproj.html", {"project": project})
-
-    except Project.DoesNotExist:
-        return render(request, "home.html")
-
-    return None
-
-
 @login_required(login_url='/login/')
 def project_form(request):
 
@@ -196,23 +226,6 @@ def updateProject(request, pk):
 
     return redirect(ptab_view)
 
-
-def achievement_view(request):
-
-    achievements = Achievement.objects.all()
-    return render(request, "achievement/achievement.html", {"achievements": achievements})
-
-
-def displayach_view(request, pk):
-
-    try:
-        achievement = Achievement.objects.get(pk=pk)
-        return render(request, "achievement/displayach.html", {"achievement": achievement})
-
-    except Achievement.DoesNotExist:
-        return render(request, "home.html")
-
-    return None
 
 
 @login_required(login_url='/login/')
@@ -275,36 +288,34 @@ def updateAch(request, pk):
     return redirect(atab_view)
 
 
-def login_view(request):
-    return render(request, "emag_admin/login.html")
 
 
-def logout_view(request):
 
-    logout(request)
-    return redirect(login_view)
-
-
+@login_required(login_url='/login/')
 def option_view(request):
     return render(request, "emag_admin/option.html")
 
 
+@login_required(login_url='/login/')
 def etab_view(request):
 
     etab = Event.objects.all()
     return render(request, "emag_admin/etab.html", {"etab": etab})
 
 
+@login_required(login_url='/login/')
 def ptab_view(request):
 
     ptab = Project.objects.all()
     return render(request, "emag_admin/ptab.html", {"ptab": ptab})
 
 
+@login_required(login_url='/login/')
 def atab_view(request):
 
     atab = Achievement.objects.all()
     return render(request, "emag_admin/atab.html", {"atab": atab})
+
 
 
 def add_subscriber(request):

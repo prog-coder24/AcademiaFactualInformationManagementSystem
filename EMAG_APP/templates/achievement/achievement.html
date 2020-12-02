@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <h3 class="card-title font-weight-bold"><a href="/achievements/{{ ach.id }}">{{ ach.achievement_title }}</a>
                     </h3>
-                    <p class="font-weight-bold text-muted">{{ ach.uploaded_at }}</p>
+                    <p class="font-weight-bold text-muted">{{ ach.uploaded_at | date:'d-m-yy'}}</p>
                     
                 </div>
                 </div>

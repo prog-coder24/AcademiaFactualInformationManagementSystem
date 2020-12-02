@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <h3 class="card-title font-weight-bold"><a href="/events/{{ event.id }}">{{ event.event_title }}</a>
                     </h3>
-                    <p class="font-weight-bold text-muted">{{ event.uploaded_at }}</p>
+                    <p class="font-weight-bold text-muted">{{ event.uploaded_at | date:'d-m-yy' }}</p>
                     <p class="event-category">{{ event.event_category }}</p>
                 </div>
                 </div>

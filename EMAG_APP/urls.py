@@ -4,14 +4,14 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', home_view),
+    path('', home),
     path('menu/events/', event_view),
     path('events/<int:pk>', displayevent_view),
     path('add-event/', event_form_view),
     path('update/<int:pk>', updateEvent_view),
     path('event/update/<int:pk>', updateEvent),
     path('delete/event/<int:pk>', deleteEvent_view),
-    path('menu/', menu_view),
+    path('menu/', menu),
     path('menu/achievements/', achievement_view),
     path('achievements/<int:pk>', displayach_view),
     path('menu/projects/', project_view),
@@ -36,5 +36,5 @@ urlpatterns = [
     path('add/subscriber', add_subscriber),
     path('success/', authenticate_view),
     path('about/', about),
-    path('welcome/', home_view),
+    path('welcome/', home),
 ]

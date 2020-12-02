@@ -18,7 +18,7 @@
         </div>
         <div class="date-uploaded">
             <p class="font-weight-bold text-muted">
-                by {{ achievement.user_id.full_name }}, {{ achievement.uploaded_at }}
+                by {{ achievement.user_id.full_name }}, {{ achievement.uploaded_at | date:'d-m-yy' }}
             </p>
         </div>
         <div class="content">{{ achievement.achievement_description | safe }}</div>
