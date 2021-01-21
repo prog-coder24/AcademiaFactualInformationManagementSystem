@@ -1,3 +1,4 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "c:\\Users\\91985\\Documents\\emagazine-deploy\\test\\Scripts\\python.exe"
 }

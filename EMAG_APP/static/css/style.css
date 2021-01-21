@@ -347,18 +347,46 @@ a:hover {
 
 @media screen and (max-width: 768px) {
   h1,
-  h2,
   h3 {
     font-size: 20px;
   }
-  h4 {
-    font-size: 18px;
-  }
+
   .achievement-section,
   .event-section,
   .project-section {
     padding: 10px;
     border: 1px #eee solid;
+  }
+  .ach-info-wrapper {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/static/img/achicon.jpeg");
+    background-size: cover;
+    padding: 200px 0px;
+    margin-bottom: 30px;
+  }
+  .event-info-wrapper {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/static/img/eicon.jpg");
+    background-size: cover;
+    padding: 200px 0px;
+    margin-bottom: 30px;
+  }
+
+  .project-info-wrapper {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/static/img/projecticon.jpeg");
+    background-size: cover;
+    padding: 200px 0px;
+    margin-bottom: 30px;
+  }
+  .op-text {
+    font-size: 12px;
+  }
+  .date-uploaded p {
+    font-size: small;
+  }
+  .navbar-brand {
+    font-size: 17px;
   }
   .main-display-wrapper {
     display: block;
@@ -372,6 +400,7 @@ a:hover {
   }
   .nav-link {
     margin: 0px;
+    font-size: 14px;
   }
   .footer p {
     font-size: 12px;
@@ -389,16 +418,65 @@ a:hover {
   .e-grid,
   .op-grid {
     display: block;
+    padding: 12px;
+  }
+
+  .card-img-top {
+    height: 240px;
+  }
+  .organised-by h3,
+  .sponsored-by h3 {
+    font-size: 13px;
+  }
+  .organised-by,
+  .sponsored-by {
+    border-left: 4px #ff9c33 solid;
+    padding: 22px;
+    text-align: center;
+  }
+  .subscribe-wrapper h1,
+  .subscribe-wrapper h5 {
+    font-size: 17px;
+  }
+  .organised-by {
+    margin-bottom: 5px !important;
+  }
+  .subscribe-input {
+    font-size: 12px;
+  }
+  .subscribe-btn a {
+    font-size: 12px;
+  }
+  .menu-wrapper h2 {
+    font-size: 17px !important;
+  }
+  .menu-wrapper h4 {
+    font-size: 16px !important;
+  }
+  .menu-wrapper a {
+    font-size: 13px;
+    padding: 10px;
+  }
+  .menu-wrapper a:hover,
+  .menu-wrapper a:active {
+    background-color: #070707;
+    color: #fff;
+    padding: 10px;
+  }
+  .event-data a,
+  .project-data a,
+  .ach-data a {
+    font-size: 13px !important;
+    padding: 10px;
   }
   .event-category {
-    width: 40%;
+    width: 30%;
+    font-size: 12px;
   }
   .content {
     font-size: 14px;
   }
-  .card-img-top {
-    height: 250px;
-  }
+
   .table-responsive {
     font-size: 12px;
   }
